@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const FrontPage = () => {
   return (
@@ -11,7 +12,7 @@ const FrontPage = () => {
       Your feedback is invaluable. Please let us know your thoughts.
     </div>
 
-    <button className="mt-6 bg-[#FFD700] px-4 py-2 rounded-lg text-lg">Start</button>
+    <button className="mt-6 bg-[#FFD700] px-4 py-2 rounded-lg text-lg"><Link to={'/feedback'}>Start</Link></button>
   </div>
 </div>
 
