@@ -104,16 +104,10 @@ const FeedbackPage = () => {
                             <div className="text-xs font-semibold inline-block py-1 px-2 rounded text-teal-600 bg-teal-200 uppercase last:mr-0 mr-1">
                                 Progress
                             </div>
-                            <div className="text-xs font-semibold inline-block py-1 px-2 rounded text-teal-600 bg-teal-200 uppercase last:mr-0 mr-1">
-                                {Math.round(progress)}%
-                            </div>
+                            
                         </div>
                         <div className="relative flex flex-col w-full rounded-lg">
-                            <div className="flex mb-2 items-center justify-between">
-                                <div className="text-xs font-semibold inline-block py-1 px-2 rounded text-teal-600 bg-teal-200 uppercase last:mr-0 mr-1">
-                                    {`Question ${currentQuestionIndex + 1}`}
-                                </div>
-                            </div>
+                            
                             <div className="flex flex-col w-full bg-gray-200 rounded-lg">
                                 <div
                                     className="relative flex flex-col h-2 rounded-lg bg-teal-600"
