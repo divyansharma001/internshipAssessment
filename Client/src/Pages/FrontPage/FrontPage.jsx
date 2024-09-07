@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const FrontPage = () => {
   return (
-    <div className="w-full bg-[#FEFFDE] h-screen flex items-center justify-center">
+    <div className="w-full bg-[#F7EFE5] h-screen flex items-center justify-center">
   <div className="text-center">
     <div className="text-4xl font-bold">
       Welcome!
@@ -12,7 +12,7 @@ const FrontPage = () => {
       Your feedback is invaluable. Please let us know your thoughts.
     </div>
 
-    <button className="mt-6 bg-[#FFD700] px-4 py-2 rounded-lg text-lg"><Link to={'/feedback'}>Start</Link></button>
+    <button className="mt-6 bg-[#674188] text-white px-4 py-2 rounded-lg text-lg"><Link to={'/feedback'}>Start</Link></button>
   </div>
 </div>
 

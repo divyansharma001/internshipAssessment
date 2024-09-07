@@ -67,17 +67,19 @@ const FeedbackPage = () => {
     }
 
     return (
-        <div className="p-4 ">
-            <h2 className="text-xl font-semibold">{`Question ${currentQuestionIndex + 1} / ${questions.length}`}</h2>
-            <h3 className="text-lg mb-4">{questions[currentQuestionIndex].text}</h3>
+        <div className='bg-[#F7EFE5] h-screen'>
+        <div className='flex justify-center align-middle pt-44'>
+        <div className="p-4">
+            <h2 className="text-lg font-semibold pb-5">{`Question ${currentQuestionIndex + 1} / ${questions.length}`}</h2>
+            <h3 className="text-xl mb-4">{questions[currentQuestionIndex].text}</h3>
 
             {questions[currentQuestionIndex].type === 'rating' && (
-                <div className="flex space-x-2">
+                <div className="flex space-x-2 gap-9 pt-6">
                     {[...Array(questions[currentQuestionIndex].maxRating).keys()].map(rating => (
                         <button
                             key={rating + 1}
                             onClick={() => handleAnswer(rating + 1)}
-                            className={`px-3 py-2 rounded ${answers[questions[currentQuestionIndex].id] === rating + 1 ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+                            className={`px-3 py-2 rounded ${answers[questions[currentQuestionIndex].id] === rating + 1 ? 'bg-[#674188] text-white' : 'bg-gray-200'}`}
                         >
                             {rating + 1}
                         </button>
@@ -89,25 +91,28 @@ const FeedbackPage = () => {
                 <textarea
                     onBlur={(e) => handleAnswer(e.target.value)}
                     defaultValue={answers[questions[currentQuestionIndex].id] || ''}
-                    className="w-full p-2 border border-gray-300 rounded"
+                    className="w-full p-2 border border-gray-300 rounded-lg"
                 />
             )}
 
-            <div className="flex space-x-2 mt-4">
+            <div className="flex space-x-2 mt-4 pt-5 gap-44">
                 <button
                     onClick={handlePrevious}
                     disabled={currentQuestionIndex === 0}
-                    className="px-4 py-2 bg-gray-300 rounded"
+                    className="px-4 py-2 bg-[#C8A1E0] rounded"
                 >
                     Previous
                 </button>
                 <button
                     onClick={handleNext}
-                    className="px-4 py-2 bg-blue-500 text-white rounded"
+                    className="px-4 py-2 bg-[#C8A1E0] rounded"
                 >
                     {currentQuestionIndex === questions.length - 1 ? 'Submit' : 'Next'}
                 </button>
             </div>
+        </div>
+        </div>
+        
         </div>
     );
 };
