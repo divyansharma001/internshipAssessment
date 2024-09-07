@@ -95,10 +95,10 @@ const FeedbackPage = () => {
 
     return (
         <div className='bg-[#F7EFE5] h-screen'>
-            <div className='flex justify-center align-middle pt-44'>
-                <div className="p-4">
-                    <h2 className="text-lg font-semibold pb-5">{`Question ${currentQuestionIndex + 1} / ${questions.length}`}</h2>
-                    <h3 className="text-lg md:text-xl mb-4">{questions[currentQuestionIndex].text}</h3>
+            <div className='flex justify-center items-center pt-12 md:pt-20'>
+                <div className="p-4 md:w-3/4 lg:w-1/2 xl:w-1/3">
+                    <h2 className="text-lg md:text-xl font-semibold pb-5">{`Question ${currentQuestionIndex + 1} / ${questions.length}`}</h2>
+                    <h3 className="text-md md:text-lg mb-4">{questions[currentQuestionIndex].text}</h3>
 
                     {questions[currentQuestionIndex].type === 'rating' && (
                         <div className="grid grid-cols-5 gap-2 md:gap-4 pt-6">
@@ -119,10 +119,10 @@ const FeedbackPage = () => {
                             onBlur={(e) => handleAnswer(e.target.value)}
                             defaultValue={answers[questions[currentQuestionIndex].id] || ''}
                             className="w-full p-2 border border-gray-300 rounded-lg"
+                            rows="4"
                         />
                     )}
 
-                   
                     <div className="mt-4">
                         <div className="relative pt-1">
                             <div className="flex mb-2 items-center justify-between">
@@ -150,7 +150,7 @@ const FeedbackPage = () => {
                         </div>
                     </div>
 
-                    <div className="flex space-x-2 mt-4 pt-5 gap-44">
+                    <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mt-4 pt-5">
                         <button
                             onClick={handlePrevious}
                             disabled={currentQuestionIndex === 0}
