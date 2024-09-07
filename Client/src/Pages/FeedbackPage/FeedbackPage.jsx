@@ -71,20 +71,20 @@ const FeedbackPage = () => {
         <div className='flex justify-center align-middle pt-44'>
         <div className="p-4">
             <h2 className="text-lg font-semibold pb-5">{`Question ${currentQuestionIndex + 1} / ${questions.length}`}</h2>
-            <h3 className="text-xl mb-4">{questions[currentQuestionIndex].text}</h3>
+            <h3 className="text-lg md:text-xl mb-4 ">{questions[currentQuestionIndex].text}</h3>
 
             {questions[currentQuestionIndex].type === 'rating' && (
-                <div className="flex space-x-2 gap-9 pt-6">
-                    {[...Array(questions[currentQuestionIndex].maxRating).keys()].map(rating => (
-                        <button
-                            key={rating + 1}
-                            onClick={() => handleAnswer(rating + 1)}
-                            className={`px-3 py-2 rounded ${answers[questions[currentQuestionIndex].id] === rating + 1 ? 'bg-[#674188] text-white' : 'bg-gray-200'}`}
-                        >
-                            {rating + 1}
-                        </button>
-                    ))}
-                </div>
+                <div className="grid grid-cols-5 gap-2 md:gap-4 pt-6">
+                {[...Array(questions[currentQuestionIndex].maxRating).keys()].map(rating => (
+                    <button
+                        key={rating + 1}
+                        onClick={() => handleAnswer(rating + 1)}
+                        className={`px-3 py-2 rounded ${answers[questions[currentQuestionIndex].id] === rating + 1 ? 'bg-[#674188] text-white' : 'bg-gray-200'}`}
+                    >
+                        {rating + 1}
+                    </button>
+                ))}
+            </div>
             )}
 
             {questions[currentQuestionIndex].type === 'text' && (
