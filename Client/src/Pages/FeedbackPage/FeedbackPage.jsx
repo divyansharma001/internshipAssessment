@@ -7,7 +7,7 @@ const FeedbackPage = () => {
     const [answers, setAnswers] = useState({});
     const [isSurveyComplete, setIsSurveyComplete] = useState(false);
 
-    // Load questions from backend or hardcoded
+   
     useEffect(() => {
         const loadQuestions = () => {
             const questionList = [
@@ -46,11 +46,10 @@ const FeedbackPage = () => {
     };
 
     const submitSurvey = () => {
-        // Mark the survey as completed in local storage
+      
         localStorage.setItem('surveyStatus', 'COMPLETED');
         setIsSurveyComplete(true);
 
-        // Show thank you screen and redirect after 5 seconds
         setTimeout(() => {
             setIsSurveyComplete(false);
             setCurrentQuestionIndex(0);
@@ -68,7 +67,7 @@ const FeedbackPage = () => {
     }
 
     return (
-        <div className="p-4">
+        <div className="p-4 ">
             <h2 className="text-xl font-semibold">{`Question ${currentQuestionIndex + 1} / ${questions.length}`}</h2>
             <h3 className="text-lg mb-4">{questions[currentQuestionIndex].text}</h3>
 
