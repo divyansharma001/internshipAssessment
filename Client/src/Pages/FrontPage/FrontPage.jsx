@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const FrontPage = () => {
   return (
     <div className="w-full bg-[#F7EFE5] h-screen flex items-center justify-center">
-      <div className="text-center p-6 max-w-lg bg-white rounded-lg shadow-lg">
+      <div className="text-center p-6 max-w-lg rounded-lg">
         <div className="text-5xl font-extrabold text-[#674188] mb-4">
           Welcome!
         </div>
