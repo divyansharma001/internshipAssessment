@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import FinalPage from '../FinalPage/FinalPage';
+import {useNavigate} from 'react-router-dom'
+
+
 
 const FeedbackPage = () => {
     const [questions, setQuestions] = useState([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [answers, setAnswers] = useState({});
-    const [isSurveyComplete, setIsSurveyComplete] = useState(false);
+    const [isSurveyComplete, setIsSurveyComplete] = useState(false)
+    const navigate = useNavigate();;
 
    
     useEffect(() => {
@@ -54,7 +58,10 @@ const FeedbackPage = () => {
             setIsSurveyComplete(false);
             setCurrentQuestionIndex(0);
             setAnswers({});
+            navigate('/')
             localStorage.removeItem('answers');
+            
+
         }, 5000);
     };
 
