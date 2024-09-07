@@ -97,6 +97,34 @@ const FeedbackPage = () => {
         <div className='bg-[#F7EFE5] h-screen'>
             <div className='flex justify-center items-center pt-12 md:pt-20'>
                 <div className="p-4 md:w-3/4 lg:w-1/2 xl:w-1/3">
+                
+                    {/* Progress Bar Section */}
+                    <div className="relative pt-1 mb-6">
+                        <div className="flex mb-2 items-center justify-between">
+                            <div className="text-xs font-semibold inline-block py-1 px-2 rounded text-teal-600 bg-teal-200 uppercase last:mr-0 mr-1">
+                                Progress
+                            </div>
+                            <div className="text-xs font-semibold inline-block py-1 px-2 rounded text-teal-600 bg-teal-200 uppercase last:mr-0 mr-1">
+                                {Math.round(progress)}%
+                            </div>
+                        </div>
+                        <div className="relative flex flex-col w-full rounded-lg">
+                            <div className="flex mb-2 items-center justify-between">
+                                <div className="text-xs font-semibold inline-block py-1 px-2 rounded text-teal-600 bg-teal-200 uppercase last:mr-0 mr-1">
+                                    {`Question ${currentQuestionIndex + 1}`}
+                                </div>
+                            </div>
+                            <div className="flex flex-col w-full bg-gray-200 rounded-lg">
+                                <div
+                                    className="relative flex flex-col h-2 rounded-lg bg-teal-600"
+                                    style={{ width: `${progress}%` }}
+                                >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Question Section */}
                     <h2 className="text-lg md:text-xl font-semibold pb-5">{`Question ${currentQuestionIndex + 1} / ${questions.length}`}</h2>
                     <h3 className="text-md md:text-lg mb-4">{questions[currentQuestionIndex].text}</h3>
 
@@ -123,33 +151,7 @@ const FeedbackPage = () => {
                         />
                     )}
 
-                    <div className="mt-4">
-                        <div className="relative pt-1">
-                            <div className="flex mb-2 items-center justify-between">
-                                <div className="text-xs font-semibold inline-block py-1 px-2 rounded text-teal-600 bg-teal-200 uppercase last:mr-0 mr-1">
-                                    Progress
-                                </div>
-                                <div className="text-xs font-semibold inline-block py-1 px-2 rounded text-teal-600 bg-teal-200 uppercase last:mr-0 mr-1">
-                                    {Math.round(progress)}%
-                                </div>
-                            </div>
-                            <div className="relative flex flex-col w-full rounded-lg">
-                                <div className="flex mb-2 items-center justify-between">
-                                    <div className="text-xs font-semibold inline-block py-1 px-2 rounded text-teal-600 bg-teal-200 uppercase last:mr-0 mr-1">
-                                        {`Question ${currentQuestionIndex + 1}`}
-                                    </div>
-                                </div>
-                                <div className="flex flex-col w-full bg-gray-200 rounded-lg">
-                                    <div
-                                        className="relative flex flex-col h-2 rounded-lg bg-teal-600"
-                                        style={{ width: `${progress}%` }}
-                                    >
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    {/* Navigation Buttons */}
                     <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mt-4 pt-5">
                         <button
                             onClick={handlePrevious}
